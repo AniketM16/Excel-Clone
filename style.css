@@ -1,0 +1,164 @@
+*{
+    /* border:1px solid red; */
+    margin:0px;
+    padding:0px;
+    font-family: sans-serif;
+
+}
+html{
+    height: 100vh;
+}
+/******* MENU ***************/
+.menu{
+    background-color: #E6E6E6;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.file-options,.formatting,.alignment{
+    width:30%;
+    height: 80%;
+    border-right:2px solid gray;
+}
+
+.file-options{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* cursor: pointer; */
+}
+
+.file-options>*{
+    width:30%;
+    text-align: center;
+}
+
+.file-options i{
+    font-size:larger;
+    margin-bottom: 0.3rem;
+}
+.file-options .file-text{
+    font-size: smaller;
+}
+
+.formatting{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.formatting>*{
+    width:40%;
+}
+
+.subgroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.subgroup>*{
+    width:90%;
+}
+
+.style-options{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top:6px;
+    margin-left: -10px;
+}
+.style-options>*{
+    width:25%;
+}
+
+.font-size-container{
+    margin-bottom: 8px;
+    margin-top: 6px;
+}
+
+.alignment{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.alignment>*{
+    width: 46px;
+    height: 25px;
+}
+
+
+.formula-bar{
+    background-color: #E6E6E6;
+    height:30px;
+    margin-left: 5px;
+}
+.main{
+    background-color: white;
+    height: calc(100vh - 80px);
+    overflow: auto;
+    position: relative;
+}
+.row .cell{
+    min-width: 87px;
+    min-height: 25px;
+    border: 1px solid teal;
+}
+.top-row{
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 26px;
+}
+.top-left-col{
+    width: 10px;
+    position: absolute;
+    top: 26px;
+    /*left: -2px;*/
+}
+.row{
+    display: flex;
+}
+.grid{
+    position: absolute;
+    top: 26px;
+    left: 26px
+}
+.top-row .cell{
+    text-align: center;
+    min-width: 87px;
+    min-height: 25px;
+    border: 1px solid teal;
+}
+
+.top-left-col .cell{
+    width: 25px;
+    height: 25px;
+    border: 1px solid teal;
+}
+
+.corner{
+    height: 26px;
+    width: 26px;
+    background-color:#B4B4B4;
+}
+
+.sheets{
+    height: 30px;
+    border: 1px solid gray;
+    text-decoration: #5C7D4F;
+}
+
+
+input[type="button"].selected{
+    background-color: lightslategrey;
+    }
+
+#new,#open,#save
+{
+    cursor: pointer;
+    transition: background 0.7s;
+}
+#new:hover,#open:hover,#save:hover
+{
+    background: #ccccb3;
+}

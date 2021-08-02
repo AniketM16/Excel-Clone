@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="menu">
+            <div class="file-options">
+                <div id="new">
+                    <i class="fa fa-plus square d-b"></i>
+                    <div class="file-text">NEW</div>
+                </div>
+                <div id="open">
+                    <i class="fa fa-envelope-open-o"></i>
+                    <div class="file-text">OPEN</div>
+                    </div>
+                <div id="save">
+                    <i class="fa fa-save"></i>
+                    <div class="file-text">SAVE</div>
+                    </div>
+            </div>
+            <div class="formatting">
+                <div class="subgroup">
+                <div class="fontFamilyContainer">
+                    <select id="font-family">
+                        <option value="Arial">Arial</option>
+                        <option value="Cambria">Cambria</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="monospace">Monospace</option>
+                        <option value="sans-serif">Sans-Serif</option>
+                        <option value="fantasy">Fantasy</option>
+                    </select>
+                </div>
+                <div class="style-options">
+                    <input id="bold" type="button" value="B">
+                    <input id="underline" type="button" value="U">
+                    <input id="italic" type="button" value="I">
+                </div>
+                </div>
+                <div class="subgroup">
+                <div class="font-size-container">
+                    <select id="font-size">
+                        <option value="8">8</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="14">14</option>
+                            <option value="16">16</option>
+                    </select>
+                </div>
+                <div class="color-container"> 
+                    <input id="bg-color" type="color" value="#FFFFFF">
+                    <input id="text-color" type="color" value="#000000">
+                </div>
+                 </div>
+            </div>
+            <div class="alignment">
+                <input type="button" value="L" id="left">
+                <input type="button" value="C" id="center">
+                <input type="button" value="R" id="right">
+            </div>
+        </div>
+        <div class="formula-bar">
+           <input type="text" id="address">
+           <input type="text" id="formula">
+        </div>
+        <div class="main">
+            <div class="corner"></div>
+            <div class="top-row">
+                <%for(let i=0;i<26;i++){%>
+                    <div class="cell">
+                        <%=String.fromCharCode(65+i)%>
+                    </div>
+                    <%}%>
+            </div>
+            <div class="top-left-col">
+                <%for(let i=1;i<=100;i++){%>
+                    <div class="cell">
+                        <%=i%>
+                    </div>
+                    <%}%>
+            </div>
+            <div class="grid">
+                <%for(let i=0;i<100;i++){%>
+                    <div class="row">
+                        <%for(let j=0;j<26;j++){%>
+                            <!-- to make cells editable -->
+                            <div class="cell" contenteditable="true" rid=<%=i%> cid=<%=j%>></div> 
+                            <!-- indices set as attribute values so that they can be mapped to address -->
+                            <%}%>
+                    </div>
+                    <%}%>
+            </div>
+        </div>
+        <div id="sheets" class="sheets">Sheets</div>
+        <!-- to use jquery -->
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+        <script src="render.js"></script>
+
+    </body>
+</html>
